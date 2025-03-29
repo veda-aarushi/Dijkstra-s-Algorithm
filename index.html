@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dijkstra Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+  <div class="bg-white p-6 rounded-2xl shadow-lg max-w-6xl mx-auto space-y-6">
+    <h1 class="text-2xl font-bold text-center text-gray-800">Dijkstra's Algorithm with Visualization</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block font-semibold mb-2">Number of Nodes:</label>
+        <input type="number" id="nodeCount" min="2" value="5" class="w-full p-2 border rounded">
+        <button onclick="generateEdgeInputs()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Create Graph</button>
+
+        <div id="edgeInputs" class="mt-4 space-y-2"></div>
+
+        <label for="source" class="block font-semibold mt-4 mb-2">Source Node:</label>
+        <input type="number" id="source" min="0" value="0" class="w-full p-2 border rounded">
+
+        <button onclick="runDijkstra()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Run Dijkstra</button>
+
+        <div>
+          <h2 class="text-lg font-semibold mt-4">Shortest Distances:</h2>
+          <pre id="result" class="bg-gray-100 p-4 rounded h-40 overflow-auto"></pre>
+        </div>
+      </div>
+
+      <div class="w-full h-[500px] bg-gray-50 border rounded">
+        <svg id="graphCanvas" width="100%" height="100%"></svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
